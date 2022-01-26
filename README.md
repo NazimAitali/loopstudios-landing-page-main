@@ -29,8 +29,8 @@ Users should be able to:
 ![](https://github.com/NazimAitali/loopstudios-landing-page-main/blob/master/loopstudios-landing-page-main%20750px.png)
 ### Links
 
-- Solution URL: https://github.com/NazimAitali/loopstudios-landing-page-main-solution.git
-- Live Site URL: https://loopstudios-landing-page-main.netlify.com
+- Solution URL: https://github.com/NazimAitali/loopstudios-landing-page-main.git
+- Live Site URL: https://loopstudios-landing-page-main-solution.netlify.com
 
 ## My process
 
