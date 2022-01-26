@@ -29,7 +29,7 @@ Users should be able to:
 ![](https://github.com/NazimAitali/loopstudios-landing-page-main/blob/master/loopstudios-landing-page-main%20750px.png)
 ### Links
 
-- Solution URL: https://github.com/NazimAitali/loopstudios-landing-page-main.git
+- Solution URL: https://github.com/NazimAitali/loopstudios-landing-page-main-solution.git
 - Live Site URL: https://loopstudios-landing-page-main.netlify.com
 
 ## My process
