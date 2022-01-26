@@ -1,0 +1,529 @@
+@import "./reset.scss";
+@import "./libs/variables.scss";
+@import "./libs/mixin.scss";
+/****************Mobile******************/
+body {
+  @include flex(flex, unset, center, column);
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: $DefaultFont;
+  width: 100vw;
+}
+.Container {
+  width: 100%;
+}
+header {
+  @include ElementParameters(100%, 45em, flex, unset, center, column);
+  background-image: url(../assets/mobile/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $White;
+}
+.Header-top {
+  @include ElementParameters(87%, 16%, flex, space-between, center, row);
+}
+.Header-top img {
+  width: clamp(1em, 38vw, 19em);
+  z-index: 99;
+}
+.Header-menu-content {
+  display: none;
+}
+.Mobile-menu {
+  @include ElementParameters(27%, 27%, flex, space-evenly, flex-end, column);
+  z-index: 99;
+}
+.Mobile-menu img {
+  width: clamp(3em, 6.5vw, 4em);
+}
+.Header-bottom {
+  @include ElementParameters(88%, 49.5%, flex, center, flex-end, row);
+}
+.Header-text {
+  @include ElementParameters(100%, 62%, flex, center, center, row);
+  max-width: 661px;
+  border: $White solid 6px;
+}
+.Header-text h1 {
+  @include flex(flex, center, center, row);
+  font-family: $Josefin;
+  font-size: clamp(1em, 10.4vw, 5.5em);
+  margin: 0.2em 0.55em 0;
+  line-height: 0.99em;
+  height: 100%;
+}
+.Menu-side {
+  @include ElementParameters(100%, 100%, flex, unset, center, column);
+  background-color: $Black;
+  position: absolute;
+  top: 0;
+  top: -100%;
+  transition: 0.5s ease-in;
+  z-index: 98;
+}
+.Open {
+  top: 0%;
+}
+.Close {
+  top: -100%;
+}
+.Menu-side-content {
+  @include ElementParameters(100%, 66.5%, flex, center, center, row);
+}
+.Menu-side-menu {
+  @include ElementParameters(100%, 40%, flex, space-evenly, flex-start, column);
+  list-style: none;
+  padding-left: 3em;
+}
+.Menu-side-menu li {
+  font-size: clamp(1em, 6.4vw, 5.5em);
+  font-family: $Josefin;
+}
+main {
+  @include ElementParameters(100%, 180em, flex, unset, center, column);
+}
+.Main-top {
+  @include ElementParameters(100%, 30%, flex, unset, center, column);
+  position: relative;
+}
+.Main-top-img {
+  @include ElementParameters(100%, 56%, flex, center, unset, row);
+}
+.Img-interactive {
+  @include dimension(87%, 63%);
+  object-fit: contain;
+  background-image: url(../assets/mobile/image-interactive.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 13em 0 0 0;
+}
+.Main-top-content {
+  @include ElementParameters(73%, 44%, flex, unset, center, column);
+}
+.Main-top-title-content {
+  @include ElementParameters(100%, 25%, flex, unset, center, row);
+}
+.Main-top-title {
+  font-size: clamp(1em, 8.25vw, 5.5em);
+  font-family: $Josefin;
+  text-align: center;
+  line-height: 1.09em;
+  margin-top: 0.9em;
+}
+.Main-top-text-content {
+  @include ElementParameters(100%, 73%, flex, unset, flex-end, row);
+}
+.Main-top-text {
+  @include flex(flex, center, center, row);
+  font-size: clamp(1em, 4.3vw, 2em);
+  font-family: $Alata;
+  text-align: center;
+  line-height: 1.65em;
+  color: $Very-Dark-Gray;
+}
+.Main-bottom {
+  @include ElementParameters(100%, 70%, flex, unset, center, column);
+}
+.Main-bottom-content {
+  @include ElementParameters(100%, 10%, flex, center, center, row);
+}
+.Main-bottom-content-title-content {
+  @include ElementParameters(100%, 69%, flex, center, flex-end, row);
+}
+.Main-bottom-title {
+  font-size: clamp(1em, 8.3vw, 5em);
+  font-family: $Josefin;
+  color: $Very-Dark-Gray;
+}
+.Main-bottom-content-buttom-content {
+  display: none;
+}
+.Main-bottom-images {
+  @include ElementParameters(100%, 90%, flex, unset, center, column);
+}
+.Main-bottom-images-content {
+  @include ElementParameters(75.5%, 100%, flex, unset, center, column);
+  padding: 0;
+  list-style: none;
+}
+.image {
+  width: clamp(4em, 87vw, 44em);
+  margin-top: 3.2em;
+  position: relative;
+  height: 16em;
+}
+$creations: image-deep-earth url(../assets/mobile/image-deep-earth.jpg),
+  image-night-arcade url(../assets/mobile/image-night-arcade.jpg),
+  image-soccer-team url(../assets/mobile/image-soccer-team.jpg),
+  image-grid url(../assets/mobile/image-grid.jpg),
+  image-from-above url(../assets/mobile/image-from-above.jpg),
+  image-pocket-borealis url(../assets/mobile/image-pocket-borealis.jpg),
+  image-curiosity url(../assets/mobile/image-curiosity.jpg),
+  image-fisheye url(../assets/mobile/image-fisheye.jpg);
+
+@each $creation in $creations {
+  .#{nth($creation, 1)} {
+    background: nth($creation, 2);
+    @include dimension(100%, 100%);
+    background-position: center;
+    background-size: cover;
+  }
+}
+.Image-text {
+  @include ElementParameters(100%, 100%, flex, center, flex-start, column);
+  color: $White;
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  &:hover {
+    color: $Black;
+    background-color: rgba($White, 0.8);
+  }
+}
+.Width-small {
+  width: 30% !important;
+}
+.Image-text p {
+  @include ElementParameters(40%, 66%, flex, center, flex-end, row);
+  font-size: clamp(1em, 6.4vw, 4em);
+  margin-left: 0.82em;
+  line-height: 1em;
+  font-family: $Josefin;
+}
+.Btn-buttom-content {
+  @include flex(flex, center, center, row);
+  width: clamp(4em, 87vw, 44em);
+  height: 8.2%;
+}
+.Btn-buttom {
+  @include ElementParameters(48%, 2.7em, flex, center, center, row);
+  border: 3px black solid;
+  background: white;
+  font-family: $Alata;
+  font-size: clamp(1em, 4vw, 3em);
+  letter-spacing: 0.3em;
+  cursor: pointer;
+  &:hover {
+    background-color: $Black;
+    color: $White;
+  }
+}
+footer {
+  @include ElementParameters(100%, 32em, flex, unset, center, column);
+  background: $Black;
+  color: $White;
+  position: relative;
+}
+
+.Footer-social {
+  @include ElementParameters(100%, 27%, flex, unset, center, column);
+}
+.Footer-logo-content {
+  @include ElementParameters(100%, 24%, flex, flex-end, center, column);
+}
+.Footer-logo {
+  width: clamp(3em, 38vw, 19em);
+}
+.Footer-menu-content {
+  @include ElementParameters(100%, 76%, flex, center, center, column);
+}
+
+.Footer-menu-container,
+.Footer-menu {
+  @include ElementParameters(100%, 71%, flex, space-between, center, column);
+  list-style: none;
+  padding: 0;
+}
+.Footer-menu li {
+  font-family: $Alata;
+  font-size: clamp(1em, 4vw, 3em);
+}
+.Footer-social-content {
+  @include ElementParameters(100%, 45%, flex, center, center, column);
+}
+.Footer-social-liste {
+  @include ElementParameters(47%, 83%, flex, space-evenly, center, row);
+  list-style: none;
+  padding: 0;
+}
+.Footer-icons {
+  height: 50%;
+}
+.Footer-icons img {
+  width: clamp(1em, 6vw, 4em);
+}
+.Footer-copyright-content {
+  @include ElementParameters(100%, 40%, flex, flex-start, center, column);
+}
+.Footer-copyright-content p {
+  font-family: $Alata;
+  font-size: clamp(1em, 4vw, 3em);
+}
+.attribution {
+  @include ElementParameters(100%, 100%, flex, center, center, row);
+  color: $Black;
+  position: absolute;
+  bottom: 55%;
+}
+/****************Mobile Up 420px******************/
+@media (min-width: $Tab) {
+  header {
+    height: 86.6em;
+  }
+  main {
+    height: 279.6em;
+  }
+  footer {
+    height: 62.8em;
+  }
+}
+/****************Desktop******************/
+@media (min-width: $Desktop) {
+  header {
+    height: 43.3em;
+    background-image: url(../assets/desktop/image-hero.jpg);
+  }
+  .Header-top {
+    @include dimension(77%, 15%);
+    align-items: flex-end;
+  }
+  .Header-menu-content {
+    @include ElementParameters(50%, 32%, flex, center, flex-end, column);
+  }
+  .Header-menu {
+    @include ElementParameters(68.5%, 70%, flex, flex-start, flex-start, row);
+    list-style: none;
+    padding: 0;
+  }
+  .Header-menu li {
+    font-size: clamp(1em, 1.1vw, 3em);
+    margin-right: 1.92em;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: $Josefin;
+    position: relative;
+  }
+  .Header-menu li::before {
+    content: "";
+    @include dimension(49%, 3px);
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    background-color: $White;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s, transform 0.2s ease-out;
+  }
+  .Header-menu li:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+  }
+  .Mobile-menu {
+    display: none;
+  }
+  .Header-top img {
+    width: clamp(1em, 13.3vw, 19em);
+  }
+  .Header-bottom {
+    @include dimension(77%, 82%);
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .Header-text {
+    @include dimension(58.5%, 52.6%);
+    border: white solid 3px;
+  }
+  .Header-text h1 {
+    font-size: clamp(4em, 4.8vw, 5em);
+    margin: 0.2em 0.5em 0;
+  }
+  .Menu-side {
+    display: none;
+  }
+  main {
+    height: 139em;
+  }
+  .Main-top {
+    height: 38%;
+  }
+  .Main-top-img {
+    height: 100%;
+    justify-content: flex-start;
+  }
+  .Img-interactive {
+    @include dimension(50.7%, 63.3%);
+    background-position: left;
+    margin: 10.8em 0 0 11em;
+  }
+  .Main-top-content {
+    width: 100%;
+    align-items: flex-end;
+    position: absolute;
+    top: 23em;
+  }
+  .Main-top-title-content {
+    @include dimension(49%, 60%);
+    background: white;
+  }
+  .Main-top-text-content {
+    @include dimension(49%, 40%);
+    justify-content: center;
+    align-items: flex-start;
+    background: white;
+  }
+  .Main-top-title {
+    font-size: clamp(1em, 3.25vw, 5.5em);
+    margin-top: 1.7em;
+    line-height: 1em;
+    width: 79%;
+  }
+  .Main-top-text {
+    @include dimension(63.5%, 84%);
+    font-size: clamp(1em, 1vw, 2em);
+    margin-right: 4.5em;
+    text-align: left;
+  }
+  .Main-bottom {
+    height: 59%;
+  }
+  .Btn-buttom-content {
+    display: none;
+  }
+  .Main-bottom-content-title-content {
+    width: 78.5%;
+  }
+  .Main-bottom-title {
+    font-size: clamp(1em, 3.3vw, 3.5em);
+    width: 71%;
+  }
+  .Main-bottom-content-buttom-content {
+    @include ElementParameters(22.5%, 61%, flex, flex-start, flex-end, row);
+  }
+  .Btn-buttom {
+    @include ElementParameters(50%, 3em, flex, center, center, row);
+    font-size: clamp(1em, 1vw, 3em);
+  }
+  .Main-bottom-images-content {
+    @include ElementParameters(77.5%, 78%, flex, space-between, center, row);
+    flex-wrap: wrap;
+    margin-top: 2.25em;
+  }
+  .image {
+    width: clamp(4em, 18vw, 23.3em);
+    margin-top: 1.7em;
+    height: 30em;
+  }
+  $creations: image-deep-earth url(../assets/desktop/image-deep-earth.jpg),
+    image-night-arcade url(../assets/desktop/image-night-arcade.jpg),
+    image-soccer-team url(../assets/desktop/image-soccer-team.jpg),
+    image-grid url(../assets/desktop/image-grid.jpg),
+    image-from-above url(../assets/desktop/image-from-above.jpg),
+    image-pocket-borealis url(../assets/desktop/image-pocket-borealis.jpg),
+    image-curiosity url(../assets/desktop/image-curiosity.jpg),
+    image-fisheye url(../assets/desktop/image-fisheye.jpg);
+  @each $creation in $creations {
+    .#{nth($creation, 1)} {
+      background: nth($creation, 2);
+      @include dimension(100%, 100%);
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+    }
+  }
+
+  .Image-text:hover > div {
+    color: $Black;
+  }
+  .Image-text p {
+    @include dimension(62%, 84%);
+    font-size: clamp(1em, 2.1vw, 4em);
+    margin-left: 1.48em;
+    line-height: 1em;
+    font-family: $Josefin;
+  }
+  Footer {
+    height: 10.7em;
+    flex-direction: row;
+  }
+  .Footer-menu-container,
+  .Footer-social {
+    @include dimension(50%, 100%);
+  }
+  .Footer-logo-content {
+    @include dimension(54%, 45%);
+    align-items: flex-start;
+  }
+  .Footer-menu-content {
+    @include dimension(55%, 55%);
+  }
+  .Footer-logo {
+    width: clamp(3em, 10.1vw, 19em);
+  }
+  .Footer-menu li {
+    font-size: clamp(1em, 1vw, 3em);
+    margin-right: 2.2em;
+    position: relative;
+    cursor: pointer;
+  }
+  .Footer-menu li::before {
+    content: "";
+    @include dimension(45%, 2px);
+    position: absolute;
+    top: 33px;
+    left: 14px;
+    background-color: $White;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s, transform 0.2s ease-out;
+  }
+  .Footer-menu li:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+  }
+  .Footer-menu {
+    @include ElementParameters(99%, 50%, flex, flex-start, flex-start, row);
+  }
+  .Footer-social-content {
+    height: 64%;
+  }
+  .Footer-copyright-content {
+    @include dimension(54%, 45%);
+    align-items: flex-end;
+  }
+  .Footer-copyright-content p {
+    font-size: clamp(1em, 1vw, 3em);
+  }
+  .Footer-social-liste {
+    @include ElementParameters(54%, 70%, flex, flex-end, flex-end, row);
+  }
+  .Footer-icons img {
+    width: clamp(1.6em, 1vw, 2em);
+    cursor: pointer;
+  }
+  .Footer-icons {
+    margin-left: 1.1em;
+    position: relative;
+  }
+  .Footer-icons::before {
+    content: "";
+    @include dimension(88%, 2px);
+    position: absolute;
+    top: 30px;
+    left: 4px;
+    background-color: $White;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s, transform 0.2s ease-out;
+  }
+  .Footer-icons:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+  }
+  .attribution {
+    @include ElementParameters(100%, 11%, flex, center, center, row);
+    color: $Black;
+    position: absolute;
+    bottom: 120%;
+  }
+}
