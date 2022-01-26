@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
+![](https://github.com/NazimAitali/loopstudios-landing-page-main/blob/master/loopstudios-landing-page-main%201440px.png)
+![](https://github.com/NazimAitali/loopstudios-landing-page-main/blob/master/loopstudios-landing-page-main%20750px.png)
 ### Links
 
 - Solution URL: https://github.com/NazimAitali/loopstudios-landing-page-main.git
